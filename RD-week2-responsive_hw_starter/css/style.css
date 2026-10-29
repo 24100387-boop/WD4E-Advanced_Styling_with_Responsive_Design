@@ -1,60 +1,142 @@
-body {
-  background-color: #dedede;
+/* Padding and borders stay inside the declared width. */
+* {
+  box-sizing: border-box;
 }
 
-h1 {
+body {
+  margin: 0;
+  padding: 0 0 32px;
+  background-color: #f2f5f9;
+  color: #20334a;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  line-height: 1.65;
   text-align: center;
-  font-family: Arial, sans-serif;
-  font-size: 32px;
+}
+
+/* Page heading */
+h1 {
+  margin: 0;
+  padding: 30px 20px 6px;
+  background-color: #173550;
+  color: #ffffff;
+  font-size: 48px;
+  line-height: 1.2;
+  letter-spacing: -1px;
+}
+
+h2 {
+  margin: 0 0 28px;
+  padding: 12px 20px 30px;
+  background-color: #173550;
+  color: #e3edf7;
+  font-size: 21px;
+  font-weight: normal;
+}
+
+/* Assignment instructions */
+p {
+  width: 92%;
+  margin: 22px auto;
+}
+
+ul {
+  width: 90%;
+  max-width: 1000px;
+  margin: 24px auto;
+  padding: 18px 24px 18px 44px;
+  background-color: #ffffff;
+  border: 1px solid #cad5e2;
+  border-radius: 14px;
+  font-size: 16px;
+  text-align: left;
+}
+
+li {
+  margin: 8px 0;
 }
 
 a {
-  color: #000;
-  text-decoration: none;
-  font-family: Arial, sans-serif;
+  color: #155384;
+  text-underline-offset: 4px;
 }
 
-p {
-  font-size: 25px;
-  font-family: Arial, sans-serif;
-  text-align: center;
+a:focus-visible {
+  outline: 3px solid #155384;
+  outline-offset: 4px;
 }
 
-img {
-  width: 100%;
-}
-
-div img {
-  width: 150px;
-  height: 150px;
-  display: block;
-  margin: auto;
-}
-
-/* Mobile: one column */
+/*
+  MOBILE:
+  One card per row.
+  No mobile media query is needed.
+*/
 div {
   display: block;
-  width: auto;
-  margin: 5px;
-  padding: 2px;
+  width: 90vw;
+  margin: 20px auto;
+  padding: 24px 16px;
+  background-color: #ffffff;
+  border: 1px solid #cad5e2;
+  border-top: 4px solid #9db2c8;
+  border-radius: 16px;
+  box-shadow: 0 5px 16px rgba(23, 53, 80, 0.07);
 }
 
-/* Tablet: two columns from 772px */
+/* Keep images inside their cards without distortion. */
+div img {
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  margin: 0 auto;
+  border: 1px solid #b6c4d4;
+  border-radius: 10px;
+}
+
+/* Color labels */
+div p {
+  width: auto;
+  margin: 16px 0 0;
+  color: #20334a;
+  font-size: 22px;
+  font-weight: bold;
+  line-height: 1.4;
+}
+
+/* Return-to-top link, when it is a direct child of body. */
+body > a {
+  display: table;
+  margin: 26px auto 0;
+  padding: 8px 16px;
+  background-color: #ffffff;
+  border: 1px solid #cad5e2;
+  border-radius: 8px;
+}
+
+/*
+  TABLET:
+  Starts at exactly 772px.
+  Each card is 45% of the viewport width.
+*/
 @media screen and (min-width: 772px) {
   div {
     display: inline-block;
     width: 45vw;
-    box-sizing: border-box;
+    margin: 10px 1vw;
     vertical-align: top;
   }
 
   div img {
-    max-width: 100%;
     max-height: 30vh;
   }
 }
 
-/* Large screen: three columns from 998px */
+/*
+  LARGE SCREEN:
+  Starts at exactly 998px.
+  Only the card width changes.
+*/
 @media screen and (min-width: 998px) {
   div {
     width: 30vw;
